@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CFF5565-7516-462B-B7C9-316C20B1DD0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WalletApiClient</RootNamespace>
+    <AssemblyName>WalletApiClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiTypes\AccountsManualInputRequest.cs" />
+    <Compile Include="ApiTypes\AccrualType.cs" />
+    <Compile Include="ApiTypes\BasicMembershipInfo.cs" />
+    <Compile Include="ApiTypes\CheckAccountsRequest.cs" />
+    <Compile Include="ApiTypes\CheckAccountsResponse.cs" />
+    <Compile Include="ApiTypes\DeletedMembershipResponse.cs" />
+    <Compile Include="ApiTypes\DeleteMembershipRequest.cs" />
+    <Compile Include="ApiTypes\Error.cs" />
+    <Compile Include="ApiTypes\MembershipCredentials.cs" />
+    <Compile Include="ApiTypes\MembershipInfo.cs" />
+    <Compile Include="ApiTypes\MembershipsRequest.cs" />
+    <Compile Include="ApiTypes\MilesInfo.cs" />
+    <Compile Include="ApiTypes\ProviderInfo.cs" />
+    <Compile Include="ApiTypes\ProviderOptionInfo.cs" />
+    <Compile Include="ApiTypes\ProvidersListResponse.cs" />
+    <Compile Include="ApiTypes\ResponseMembershipInfo.cs" />
+    <Compile Include="ApiTypes\TierAlias.cs" />
+    <Compile Include="ApiTypes\TierInfo.cs" />
+    <Compile Include="ApiTypes\TierProgressionThresholdInfo.cs" />
+    <Compile Include="ApiTypes\TiersLevelsInfo.cs" />
+    <Compile Include="Common\ActionResult.cs" />
+    <Compile Include="Common\ActionResultBase.cs" />
+    <Compile Include="Common\DefaultJsonEnumConverter.cs" />
+    <Compile Include="Common\JsonEnumConverter.cs" />
+    <Compile Include="Common\JsonSerializer.cs" />
+    <Compile Include="Common\Status.cs" />
+    <Compile Include="Configuration\ApiClientConfiguration.cs" />
+    <Compile Include="Configuration\IBaseApiClientConfiguration.cs" />
+    <Compile Include="HttpVerb.cs" />
+    <Compile Include="WalletApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
